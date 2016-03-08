@@ -7,13 +7,21 @@ This app provides users with a menu template based on 7 courses.  Users can inpu
 ## Objectives & Requirements
 
 -Understand REST and when to break it
+
 -Understand the Rails Asset Pipeline
+
 -Understand how Rails uses gems
+
 -Understand workflow design
+
 -Use images as part of the Asset Pipeline
+
 -Use SCSS as part of the Asset Pipeline
+
 -Utilize Rails redirects
+
 -Use Heroku to serve up images from the asset pipeline
+
 -Start putting cleaner style on your apps
 
 ## Usage

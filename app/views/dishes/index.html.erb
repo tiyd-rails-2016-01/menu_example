@@ -14,8 +14,8 @@
           <%= image_tag asset_url("image#{course.id}.jpg"), id: "food"%></br>
             <%course.dishes.each do |dish|%>
               <span id="dish"><%=link_to dish.name, edit_dish_path(dish)%></span></br>
-              <%p = dish.price%><%=number_to_currency(p)%></br>
-              <%=dish.description%></br></br>
+              <span id="price"><%p = dish.price%><%=number_to_currency(p)%></span></br>
+              <span id="description"><%=dish.description%></span></br></br>
             <%end%>
             <i class="glyphicon glyphicon-plus"></i>
             <span id="new_dish">

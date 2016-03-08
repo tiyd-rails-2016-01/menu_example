@@ -7,7 +7,7 @@
 </div>
 <div class="col-md-10" id="menu_whole">
   <%@courses.each_slice(2) do |courses|%>
-    <div class="row" id="menu_row">
+    <div class="row">
       <%courses.each do |course|%>
         <div class="col-md-6" id="menu_section">
           <span id="food_label"><%=course.name%></br></span>

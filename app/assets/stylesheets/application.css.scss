@@ -41,19 +41,22 @@ $main_color: #990066;
  #food_label {
    color: $main_color;
    margin-top: $margin;
+   font-size: 20px;
+}
+
+ #dish {
    font-size: 18px;
-
-   #dish {
-     font-size: 18px;
-
-   }
  }
 
+
  #menu_whole {
-   border: solid 1px black;
+   border: solid 2px black;
 
-     #menu_section {
-       border: dotted 3px $main_color;
-     }
-
+   #menu_section {
+     border-top: dotted 2px $main_color;
+     border-right: dotted 2px $main_color;
+     border-left: dotted 2px $main_color;
+     text-align: center;
+     padding: 30px;
+   }
  }

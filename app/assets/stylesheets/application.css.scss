@@ -18,6 +18,13 @@
 $margin: 15px;
 $main_color: #99AAEE;
 
+#notice {
+  color:red;
+  background-color: pink;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
 body {
   background-color: black;
 }

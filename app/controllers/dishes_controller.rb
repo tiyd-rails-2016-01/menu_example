@@ -1,4 +1,5 @@
 class DishesController < ApplicationController
+  before_action :authenticate
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   # GET /dishes
@@ -16,6 +17,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/new
   def new
+    redirect_to dishes_path, notice: "You already made a dish" if session[:used]
     @dish = Dish.new(course_id: params[:course_id])
   end
 
@@ -30,6 +32,7 @@ class DishesController < ApplicationController
 
     respond_to do |format|
       if @dish.save
+        session[:used] = true
         format.html { redirect_to root_path, notice: 'Dish was successfully created.' }
         format.json { render :show, status: :created, location: @dish }
       else

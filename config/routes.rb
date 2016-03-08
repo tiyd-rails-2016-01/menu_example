@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'authenticate/login'
+  post 'authenticate/login'
+
+  get 'authenticate/logout'
+
   root 'dishes#index'
 
   resources :courses

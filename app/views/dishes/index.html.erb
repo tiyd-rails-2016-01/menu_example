@@ -1,33 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Dishes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Price</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Course</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dishes.each do |dish| %>
-      <tr>
-        <td><%= dish.price %></td>
-        <td><%= dish.name %></td>
-        <td><%= dish.description %></td>
-        <td><%= dish.course_id %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Dish', new_dish_path %>
+<div class="col-md-12">
+  <h1>Menu<i class="glyphicon glyphicon-cutlery"></i></h1>
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-10" id="menu_whole">
+  <%@courses.each_slice(2) do |courses|%>
+    <div class="row" id="menu_row">
+      <%courses.each do |course|%>
+        <div class="col-md-6" id="menu_section">
+          <span id="food_label"><%=course.name%></br></span>
+          <%= image_tag asset_url("image#{course.id}.jpg"), id: "food"%></br>
+            <%course.dishes.each do |dish|%>
+              <span id="dish"><%=link_to dish.name, edit_dish_path(dish)%></span></br>
+              <%p = dish.price%><%=number_to_currency(p)%></br>
+              <%=dish.description%></br></br>
+            <%end%>
+            <i class="glyphicon glyphicon-plus"></i>
+            <span id="new_dish">
+              <%= link_to 'New Dish', new_dish_path(course_id: course.id) %>
+            </span>
+          </div>
+      <%end%>
+    </div>
+  <%end%>
+</div>

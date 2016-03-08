@@ -1,6 +1,5 @@
 <h1>Editing Dish</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @dish %> |
+<%= button_to "Delete", @dish, :method => :delete %>
 <%= link_to 'Back', dishes_path %>

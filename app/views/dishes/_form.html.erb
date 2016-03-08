@@ -1,4 +1,4 @@
-<%= form_for(@dish, url: dishes_path(@dish)) do |f| %>
+<%= form_for(@dish) do |f| %>
   <% if @dish.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
@@ -12,23 +12,27 @@
   <% end %>
 
     <div class="field">
-      <%= f.label :price, {:style=>'color:#99AAEE'} %><br>
+      <%= f.label :price, class: "blueish" %><br>
       <%= f.text_field :price %>
     </div>
 
     <div class="field">
-      <%= f.label :name, {:style=>'color:#99AAEE'} %><br>
+      <%= f.label :name %><br>
       <%= f.text_field :name %>
     </div>
 
     <div class="field">
-      <%= f.label :description, {:style=>'color:#99AAEE'} %><br>
+      <%= f.label :description %><br>
       <%= f.text_area :description %>
     </div>
 
     <div class="field">
-      <%= f.label :course_id, {:style=>'color:#99AAEE'} %><br>
-      <%= f.text_field :course_id, :readonly => true %>
+      <% if @dish.persisted? %>
+        <%= f.label :course_id %><br>
+        <%= f.collection_select :course_id, Course.all, :id, :name %>
+      <% else %>
+        <%= f.hidden_field :course_id %>
+      <% end %>
     </div>
 
     <div class="actions">

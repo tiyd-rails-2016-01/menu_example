@@ -18,9 +18,13 @@
 $margin: 15px;
 $main_color: #99AAEE;
 
-  body {
-    background-color: black;
-  }
+body {
+  background-color: black;
+}
+
+label.blueish {
+  color: $main_color;
+}
 
  #food {
    width: 150px;

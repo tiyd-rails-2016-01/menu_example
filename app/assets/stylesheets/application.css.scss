@@ -16,8 +16,12 @@
  @import "bootstrap";
 
 $margin: 15px;
-$main_color: #990066;
+$main_color: #99AAEE;
 
+  body {
+    background-color: black;
+
+  }
  #food {
    width: 150px;
    margin: $margin;
@@ -32,9 +36,8 @@ $main_color: #990066;
 
  #new_dish {
    color: black;
-   border: solid 1px black;
+   border: solid 1px #9999aa;
    padding: 5px;
-   background-color: lightgrey;
    margin-bottom: $margin;
  }
 
@@ -51,15 +54,17 @@ $main_color: #990066;
  }
 
   #price {
+    color: grey;
     float: right;
   }
 
   #description {
+    color: grey;
     float: left;
   }
 
   #menu_whole {
-   border: solid 2px black;
+   border: solid 2px #99AACC;
 
    #menu_section {
      border-top: dotted 2px $main_color;
@@ -68,4 +73,12 @@ $main_color: #990066;
      text-align: center;
      padding: 30px;
    }
+  }
+
+  #menu_main {
+    color: white;
+  }
+
+  #plus {
+    color: grey;
   }

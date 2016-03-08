@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-12">
-  <h1>Menu<i class="glyphicon glyphicon-cutlery"></i></h1>
+  <h1 id="menu_main">Menu<i class="glyphicon glyphicon-cutlery"></i></h1>
 </div>
 <div class="col-md-2">
 </div>
@@ -17,7 +17,7 @@
               <span id="price"><%p = dish.price%><%=number_to_currency(p)%></span></br>
               <span id="description"><%=dish.description%></span></br></br>
             <%end%>
-            <i class="glyphicon glyphicon-plus"></i>
+            <span id="plus"><i class="glyphicon glyphicon-plus"></i></span>
             <span id="new_dish">
               <%= link_to 'New Dish', new_dish_path(course_id: course.id) %>
             </span>

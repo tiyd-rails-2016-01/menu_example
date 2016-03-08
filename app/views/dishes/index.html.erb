@@ -13,13 +13,13 @@
           <span id="food_label"><%=course.name%></br></span>
           <%= image_tag asset_url("image#{course.id}.jpg"), id: "food"%></br>
             <%course.dishes.each do |dish|%>
-              <span id="dish"><%=link_to dish.name, edit_dish_path(dish)%></span></br>
+              <span id="dish"><%=link_to dish.name, edit_dish_path(dish), {:style=>'color:#99AAEE; font-family:fantasy'}%></span></br>
               <span id="price"><%p = dish.price%><%=number_to_currency(p)%></span></br>
               <span id="description"><%=dish.description%></span></br></br>
             <%end%>
             <span id="plus"><i class="glyphicon glyphicon-plus"></i></span>
             <span id="new_dish">
-              <%= link_to 'New Dish', new_dish_path(course_id: course.id) %>
+              <%= link_to 'New Dish', new_dish_path(course_id: course.id), {:style=>'color:#99AAEE;'} %>
             </span>
           </div>
       <%end%>
